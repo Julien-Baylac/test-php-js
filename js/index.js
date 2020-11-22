@@ -1,12 +1,11 @@
-async function fetchData() {
-    try {
-        const response = await fetch("https://api.punkapi.com/v2/beers")
-        const data = await response.json()
-        return data
+let api = 'https://api.punkapi.com/v2/beers'
 
-    } catch (error) {
-        console.error(error)
+async function getBeerList() {
+    response = await fetch(api)
+    let data = await response.json()
+    let listHtml = document.getElementById('list')
+    for (let i = 0; i < data.length; i++) {
+        const beer = data[i];
+        listHtml.innerHTML += `<li>${beer.name}</li>`
     }
 }
-const beers = fetchData()
-console.log(beers)
