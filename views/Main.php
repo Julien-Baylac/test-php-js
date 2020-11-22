@@ -7,6 +7,13 @@
             </div>'
         ?>
     </div>
+    <div>
+        <?php
+            foreach ($response as $key => $fuckingBeer) {
+                echo '<li>'.$fuckingBeer->name.'</li>';
+            }
+        ?>
+    </div>
     <button type="button" onclick="getBeerList()">Get list</button>
     <div>
         <ul id="list"></ul>

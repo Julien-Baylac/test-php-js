@@ -13,6 +13,10 @@
 </head>
 
 <body>
+    <?php
+        $response = file_get_contents('https://api.punkapi.com/v2/beers');
+        $response = json_decode($response);
+    ?>
     <div class="container-fluid">
         <div class="row">
             <?php include("./views/NavBar.php"); ?>
